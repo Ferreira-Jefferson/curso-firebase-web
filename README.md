@@ -1,0 +1,1 @@
+Este repositório tem como intuito ser utilizado para a execução do curso UDEMY: [Firebase para Web e Apps híbridos.](https://www.udemy.com/firebase-para-web-e-apps-hibridos/), ministrado pelo instrutor **Gabriel Barreto**
