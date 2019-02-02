@@ -4,4 +4,10 @@
     "nós" : "OS nós são os níveis de informação, o realtime permite que alinhe até 32 nós de profundidade, entretanto quanto menos profundidade mais eficiete a busca."
     "Dicas" : ["Repetir informações é super indicado", "Separar os nós que possuem muita informação."],
     "Pontos Negativos" : ["Não possui mêtodos de pesquisa como o Where dos bancos SQL, o que torna a busca por informações é custosa"]
-}
+},
+
+"firebase" : "Objeto fornecido pela própria API que possui todas as variáveis e métodos para trabalhar com o firebase",
+"database()" : "Método que permite acessar o realtime database",
+"ref()" : "Método que indica por meio de uma String a URL que será acessada",
+"set()" : "Método que INSERE os dados na URL passada, caso já possua algum dado na URL passada ele sobrescreve",
+"then()" : "Promesse que espera o retorno da confirmação da gravação dos dados passados",

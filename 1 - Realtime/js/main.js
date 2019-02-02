@@ -9,7 +9,7 @@ var NOMES = ["Anderson", "Beatriz", "Caio", "Daniela", "Everton", "Fabiana", "Ga
  * database(): metodo para acesso ao realtime database.
  * ref(): url em string para referencia do caminho do banco
  */
-var ref = firebase.database().ref('card');
+// var ref = firebase.database().ref('card');
 
 /**
  * Botão para cria um card no card-contaier
@@ -21,6 +21,9 @@ function criarCard() {
         curtidas: 0
     };
 
+    firebase.database().ref('card/' + card.nome).set(card).then(() => {
+        adicionaCardATela(card)
+    });
     /**
      * set(): metodo que cria dados na url passada
      * child(): Acessa o nó filho passado por parametro
@@ -39,11 +42,11 @@ function criarCard() {
     /**
      * USANDO FETCH PARA ADICIONAR UM CARD
      */
-    fetch('https://jaquesalgados-5da72.firebaseio.com/card.json', {
+    /* fetch('https://jaquesalgados-5da72.firebaseio.com/card.json', {
         body: JSON.stringify(card),
         method: 'POST',
         mode: 'no-cors'
-    }).catch(err => console.log(err));
+    }).catch(err => console.log(err)); */
 };
 
 /**
