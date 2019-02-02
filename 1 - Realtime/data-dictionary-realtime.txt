@@ -1,0 +1,7 @@
+"Realtime" : {
+    "O que é" : "É um banco em formato json acessado por meio de URL.",
+    "tipos" : "Ele aceita apenas os tipos String, Number e Boolean.",
+    "nós" : "OS nós são os níveis de informação, o realtime permite que alinhe até 32 nós de profundidade, entretanto quanto menos profundidade mais eficiete a busca."
+    "Dicas" : ["Repetir informações é super indicado", "Separar os nós que possuem muita informação."],
+    "Pontos Negativos" : ["Não possui mêtodos de pesquisa como o Where dos bancos SQL, o que torna a busca por informações é custosa"]
+}
