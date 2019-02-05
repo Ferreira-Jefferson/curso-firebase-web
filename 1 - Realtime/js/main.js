@@ -9,7 +9,7 @@ var NOMES = ["Anderson", "Beatriz", "Caio", "Daniela", "Everton", "Fabiana", "Ga
  * database(): metodo para acesso ao realtime database.
  * ref(): url em string para referencia do caminho do banco
  */
-// var ref = firebase.database().ref('card');
+var ref = firebase.database().ref('card');
 
 /**
  * Botão para cria um card no card-contaier
@@ -21,7 +21,7 @@ function criarCard() {
         curtidas: 0
     };
 
-    firebase.database().ref('card/' + card.nome).set(card).then(() => {
+     ref.push(card).then(() => {
         adicionaCardATela(card)
     });
     /**
@@ -118,30 +118,30 @@ document.addEventListener("DOMContentLoaded", function () {
      * once(): retorna os dados lidos de uma URL
      * snapshot: objeto retornado pela leitura
      */
-    // ref.once('value').then(snapshot => {
+    ref.once('value').then(snapshot => {
     // acessa um nó filho
-    // console.log('child', snapshot.child('-LQGr2gZN3cGfZE5BqFs').val());
+    console.log('child', snapshot.child('-LQGr2gZN3cGfZE5BqFs').val());
 
     // checa se existe algo no snapshot
-    // console.log('exists()', snapshot.exists());
+    console.log('exists()', snapshot.exists());
 
     // se existe o filho passado na url
-    // console.log('hasChild() nome', snapshot.hasChild('-LQGr2gZN3cGfZE5BqFs/nome'));
-    // console.log('hasChild() comentario', snapshot.hasChild('-LQGr2gZN3cGfZE5BqFs/comentario'));
+    console.log('hasChild() nome', snapshot.hasChild('-LQGr2gZN3cGfZE5BqFs/nome'));
+    console.log('hasChild() comentario', snapshot.hasChild('-LQGr2gZN3cGfZE5BqFs/comentario'));
 
     // se existe algum filho no nó
-    // console.log('hasChildren()', snapshot.child('-LQGr2gZN3cGfZE5BqFs').hasChildren());
+    console.log('hasChildren()', snapshot.child('-LQGr2gZN3cGfZE5BqFs').hasChildren());
 
     // numero de filhos no snapshot
-    // console.log('numChildren()', snapshot.numChildren());
+    console.log('numChildren()', snapshot.numChildren());
 
     // a chave desse snapshot/caminho
-    // console.log('chave', snapshot.key);
-    //     snapshot.forEach(value => {
-    //          console.log('chave', value.key);
-    //         adicionaCardATela(value.val(), value.key);
-    //     });
-    // });
+    console.log('chave', snapshot.key);
+        snapshot.forEach(value => {
+             console.log('chave', value.key);
+            adicionaCardATela(value.val(), value.key);
+        });
+    });
 
     /**
      * ON

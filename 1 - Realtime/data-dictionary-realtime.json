@@ -1,0 +1,33 @@
+{
+    "Realtime" : {
+        "O que é" : "É um banco em formato json acessado por meio de URL.",
+        "tipos" : "Ele aceita apenas os tipos String, Number e Boolean.",
+        "nós" : "OS nós são os níveis de informação, o realtime permite que alinhe até 32 nós de profundidade, entretanto quanto menos profundidade mais eficiete a busca.",
+        "Dicas" : ["Repetir informações é super indicado", "Separar os nós que possuem muita informação."],
+        "Pontos Negativos" : ["Não possui mêtodos de pesquisa como o Where dos bancos SQL, o que torna a busca por informações é custosa"]
+    },
+
+    "firebase" : "Objeto fornecido pela própria API que possui todas as variáveis e métodos para trabalhar com o firebase",
+    "database()" : "Método que permite acessar o realtime database",
+    "ref()" : "Método que indica por meio de uma String a URL que será acessada",
+    "set()" : "Método que INSERE os dados na URL passada, caso já possua algum dado na URL passada ele sobrescreve",
+    "then()" : "Promesse que espera o retorno da confirmação da gravação dos dados passados",
+    "child()" : "Método que recebe a identificação/URL de um nó filho passado no parâmetro e o reserva para ser manipulado",
+    "push()" : "Método gera um Unic ID com base no datatime e INSERE os dados na URL passada indentificando-os por meio do UID gerado",
+    "once()" : {
+        "once()" : "Método para BUSCAR os valores da database, tem por característica criar o listener/observable e após pegar os valores ele o retira, outra carácterística é que ele retorna um objeto com os objetos do banco (snapshot).",
+        "value" : "Parâmetro passado para o once que indica que sejam retornados os valores da database"
+    },
+    "snapshot" : {
+        "snapshot" : "objeto retornado com os dados solicitados, traz consigo alguns métodos que podem ser usados para manipulá-los",
+        "child()" : "Método que recebe a identificação/URL de um nó filho passado no parâmetro e o reserva para ser manipulado",
+        "forEach()" : "Método para percorrer o snapshot",
+        "val()" : "Método para pegar os valores de cada objeto retornado no snapshot, ou de um objeto em expecífico",
+        "exists()" : "Método boleano que indica se o snapshot possui algum objeto",
+        "hasChild()" : "Método boleano que indica se a URL passada possui valor",
+        "hasChilden()" : "Método que retorna se o nó e questão possui algum filho",
+        "numChildren()" : "Método que indica o número de filhos que o nó possui",
+        "key" : "Propriedade que informa a chave/caminho do nó" 
+    }
+
+}
