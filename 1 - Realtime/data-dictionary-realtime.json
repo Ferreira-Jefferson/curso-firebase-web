@@ -15,8 +15,8 @@
     "child()" : "Método que recebe a identificação/URL de um nó filho passado no parâmetro e o reserva para ser manipulado",
     "push()" : "Método gera um Unic ID com base no datatime e INSERE os dados na URL passada indentificando-os por meio do UID gerado",
     "once()" : {
-        "once()" : "Método para BUSCAR os valores da database, tem por característica criar o listener/observable e após pegar os valores ele o retira, outra carácterística é que ele retorna um objeto com os objetos do banco (snapshot).",
-        "value" : "Parâmetro passado para o once que indica que sejam retornados os valores da database"
+        "once()" : "Método para BUSCAR os valores da database, tem por característica criar o listener/observable e após pegar os valores ele o retira, outra característica é que ele retorna um objeto com os objetos do banco (snapshot).",
+        "'value'" : "Parâmetro passado para o once que indica que sejam retornados os valores da database"
     },
     "snapshot" : {
         "snapshot" : "objeto retornado com os dados solicitados, traz consigo alguns métodos que podem ser usados para manipulá-los",
@@ -28,6 +28,8 @@
         "hasChilden()" : "Método que retorna se o nó e questão possui algum filho",
         "numChildren()" : "Método que indica o número de filhos que o nó possui",
         "key" : "Propriedade que informa a chave/caminho do nó" 
-    }
+    },
+    "remove()" : "Este métodp remove o có passado por parametro, uma forma alterativa seria utilizar o .set(null)",
+    "update()" : "Este método recebe um objeto (e apenas um objeto) e atualiza as o nó com base no obejeto passado, uma alternativa ao update seria utilizar o .set(valor) sendo que deve ser passado o caminho completo do filho que será atualizado, pois o .set() sobrescre tudos os demais que não foram informados"
 
 }
