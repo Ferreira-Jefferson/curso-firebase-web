@@ -146,25 +146,25 @@ document.addEventListener("DOMContentLoaded", function () {
     /**
      * ON
      */
-    // ref.on('value', snapshot => {
-    //     console.log('value', snapshot.key);
-    //     snapshot.forEach(value => {
-    //         adicionaCardATela(value.val(), value.key);
-    //     });
-    // });
+     ref.on('value', snapshot => {
+         console.log('value', snapshot.key);
+         snapshot.forEach(value => {
+             adicionaCardATela(value.val(), value.key);
+         });
+     });
 
-    // ref.on('child_added', snapshot => {
-    //     console.log('child_added', snapshot.key);
-    //     adicionaCardATela(snapshot.val(), snapshot.key);
-    // });
+     ref.on('child_added', snapshot => {
+         console.log('child_added', snapshot.key);
+         adicionaCardATela(snapshot.val(), snapshot.key);
+     });
 
-    // ref.on('child_changed', (snapshot, uid) => {
-    //     console.log('child_changed', snapshot.key + ' - ' + uid);
-    // });
+     ref.on('child_changed', (snapshot, uid) => {
+         console.log('child_changed', snapshot.key + ' - ' + uid);
+     });
 
-    // ref.on('child_removed', snapshot => {
-    //     console.log('child_removed', snapshot.key);
-    // });
+     ref.on('child_removed', snapshot => {
+         console.log('child_removed', snapshot.key);
+     });
 
     /**
      * ORDERNAÇÃO
