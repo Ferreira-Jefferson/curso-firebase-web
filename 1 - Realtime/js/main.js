@@ -146,25 +146,25 @@ document.addEventListener("DOMContentLoaded", function () {
     /**
      * ON
      */
-     ref.on('value', snapshot => {
-         console.log('value', snapshot.key);
-         snapshot.forEach(value => {
-             adicionaCardATela(value.val(), value.key);
-         });
-     });
+    // ref.on('value', snapshot => {
+    //     console.log('value', snapshot.key);
+    //     snapshot.forEach(value => {
+    //         adicionaCardATela(value.val(), value.key);
+    //     });
+    // });
 
-     ref.on('child_added', snapshot => {
-         console.log('child_added', snapshot.key);
-         adicionaCardATela(snapshot.val(), snapshot.key);
-     });
+    // ref.on('child_added', snapshot => {
+    //     console.log('child_added', snapshot.key);
+    //     adicionaCardATela(snapshot.val(), snapshot.key);
+    // });
 
-     ref.on('child_changed', (snapshot, uid) => {
-         console.log('child_changed', snapshot.key + ' - ' + uid);
-     });
+    // ref.on('child_changed', (snapshot, uid) => {
+    //     console.log('child_changed', snapshot.key + ' - ' + uid);
+    // });
 
-     ref.on('child_removed', snapshot => {
-         console.log('child_removed', snapshot.key);
-     });
+    // ref.on('child_removed', snapshot => {
+    //     console.log('child_removed', snapshot.key);
+    // });
 
     /**
      * ORDERNAÇÃO
@@ -173,10 +173,19 @@ document.addEventListener("DOMContentLoaded", function () {
      * .orderByValue(): Ordena pelo valor de cada propriedade dentro do nó, não vale para nós que tenham como filho outros nós
      * !!! É possivel utilizar apenas um metodo de ordenação por vez !!!
      */
-    // ref.child('-LQW4HkgzSKKZbvUFW-P').orderByValue().on('child_added', snapshot => {
-    //     console.log('O valor da chave ' + snapshot.key + ' é ' + snapshot.val());
-    //     // adicionaCardATela(snapshot.val(), snapshot.key);
-    // });
+
+     ref.orderByChild('idade').on('child_added', snapshot => {
+        adicionaCardATela(snapshot.val(), snapshot.key);
+     });
+
+     ref.orderByKey().on('child_added', snapshot => {
+         adicionaCardATela(snapshot.val(), snapshot.key);
+     });
+
+     ref.child('-LQW4HkgzSKKZbvUFW-P').orderByValue().on('child_added', snapshot => {
+         console.log('O valor da chave ' + snapshot.key + ' é ' + snapshot.val());
+         // adicionaCardATela(snapshot.val(), snapshot.key);
+     });
 
     /** 
      * Filtro

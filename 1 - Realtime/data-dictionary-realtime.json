@@ -29,7 +29,7 @@
         "numChildren()" : "Método que indica o número de filhos que o nó possui",
         "key" : "Propriedade que informa a chave/caminho do nó" 
     },
-    "remove()" : "Este métodp remove o có passado por parametro, uma forma alterativa seria utilizar o .set(null)",
+    "remove()" : "Este método remove o nó passado por parametro, uma forma alterativa seria utilizar o .set(null)",
     "update()" : "Este método recebe um objeto (e apenas um objeto) e atualiza as o nó com base no obejeto passado, uma alternativa ao update seria utilizar o .set(valor) sendo que deve ser passado o caminho completo do filho que será atualizado, pois o .set() sobrescre tudos os demais que não foram informados",
     "on()" : {
         "on()" : "O método on é o que tornou o realtime database do firebase tão popular, ele consiste em  um método que cria um observable para escutar mudanças no banco firebase.",
@@ -37,7 +37,12 @@
         "'child_added'"  :"Atributo para pegar apenas o novo filho/valor quando este é adicionado adicionado.",
         "'child_changed'" : "Método que retorna um valor sempre que há uma mudança no árvore do nó, , retorna dois valores, o primeiro é o snapshot com os dados do que foi adicionado e o segundo retorna o uid do nó anterios ou null caso não exista em nó anterior.",
         "'child_removed'" : "Método que retorna um valor sempre que um nó filho principal é removido."
-
+    },
+    "order" : {
+        "Order" : "São os métodos de ordenação dos dados retornados do banco. Eles só podem ser utilizados com o método on() e apenas um por vez.",
+        "orderByChild()" : "Ordena o retorno de acordo com o filho passado por parametro.",
+        "orderBykey()" : "Ordena o retorno de acordo com as chaves dos nós, este é o método de ordenação padrão.",
+        "orderByValue()" : "Ordena as propriedades dos nós passados."
     }
 
 }
